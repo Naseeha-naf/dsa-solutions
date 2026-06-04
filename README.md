@@ -11,7 +11,7 @@ I use this space to improve my problem-solving skills, logic building, and codin
 🔑 Hashing
 📊 Basic Math Problems
 
-##📌 Goals of This Repo
+## 📌 Goals of This Repo
 Improve coding logic step by step
 Build strong DSA foundation
 Practice LeetCode problems daily
