@@ -1,25 +1,27 @@
-class Solution {
-public boolean isAnagram(String s, String t) {
 
-    if (s.length() != t.length()) { //check length
-        return false;
-    }
+class Solution{
+    public boolean isAnagram(String s,String t){
+        
 
-    int[] arr = new int[26]; // create the single for balancing
-
-    for (int i = 0; i < s.length(); i++) {
-        arr[s.charAt(i) - 'a']++; //adding 
-    }
-
-    for (int i = 0; i < t.length(); i++) {
-        arr[t.charAt(i) - 'a']--; //sub 
-    }
-
-    for (int i = 0; i < 26; i++) {
-        if (arr[i] != 0) { //entire array if not zero
+        if(s.length()!=t.length()){   
             return false;
         }
+        HashMap <Character,Integer> map=new HashMap<>();
+        for(char i:s.toCharArray()){
+            map.put(i,map.getOrDefault(i,0)+1);
+            
+        }
+        for(char i:t.toCharArray()){
+            if(map.getOrDefault(i,0)==0){
+            
+                return false;
+            }
+            else{
+                map.put(i,map.getOrDefault(i,0)-1);
+                
+            }
+        
+        }
+        return true;
     }
-
-    return true;
 }
